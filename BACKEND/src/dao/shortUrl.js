@@ -9,7 +9,7 @@ export const saveShortUrl = async (shortUrl, longUrl, userId) => {
     newUrl.user = userId;
   }
 
-  newUrl.save();
+  await newUrl.save();
 };
 
 export const getShortUrl = async (shortUrl) => {
