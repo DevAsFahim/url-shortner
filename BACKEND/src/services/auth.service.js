@@ -12,7 +12,7 @@ export const loginUser = async (email, password) => {
     email: user.email,
   });
 
-  return token;
+  return {token, user};
 };
 
 export const registerUser = async (name, email, password) => {
@@ -27,5 +27,5 @@ export const registerUser = async (name, email, password) => {
     email: newUser.email,
   });
 
-  return token;
+  return {token, user};
 };

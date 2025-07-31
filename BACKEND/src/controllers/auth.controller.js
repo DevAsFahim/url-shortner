@@ -4,8 +4,9 @@ import { cookieOptions } from "../config/config.js";
 
 export const login = wrapAsync(async (req, res) => {
   const { email, password } = req.body;
-  const token = await loginUser(email, password);
+  const {token, user} = await loginUser(email, password);
 
+  req.user = user
   res.cookie("accessToken", token, cookieOptions);
   res.status(200).json({
     success: true,
